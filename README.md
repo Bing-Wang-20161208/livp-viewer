@@ -53,4 +53,6 @@ dotnet run --project src/LivpViewer/LivpViewer.csproj -- --self-test
 - 目前提供 x64 构建。`build.ps1 -Runtime win-arm64` 可尝试 ARM64，但需相应原生依赖支持，尚未验证。
 - 本项目没有针对 Windows ARM 或真实设备上的所有 LIVP 变体做兼容性验证。
 
-第三方组件与再分发注意事项见 [THIRD-PARTY.md](THIRD-PARTY.md)。
+## 来源与许可
+
+本项目的代码与文档由 GPT-6 Sol 生成。项目本体采用 [MIT License](LICENSE)，允许自由使用、修改和分发。第三方组件仍适用各自的许可证与再分发要求，详见 [THIRD-PARTY.md](THIRD-PARTY.md)。
