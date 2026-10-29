@@ -1,0 +1,28 @@
+name: Windows build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Restore and build
+        run: dotnet build src/LivpViewer/LivpViewer.csproj -c Release -r win-x64
+      - name: Test LIVP container handling
+        shell: pwsh
+        run: |
+          & ./src/LivpViewer/bin/Release/net8.0-windows/win-x64/LivpViewer.exe --self-test
+          if ($LASTEXITCODE -ne 0) { throw 'Self-test failed.' }
+      - name: Package portable viewer
+        shell: cmd
+        run: scripts\build.cmd
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LivpViewer-win-x64
+          path: dist/LivpViewer-win-x64.zip
