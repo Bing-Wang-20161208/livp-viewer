@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>LivpViewer</AssemblyName>
+    <RootNamespace>LivpViewer</RootNamespace>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="LibVLCSharp.WinForms" Version="3.10.1" />
+    <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.24" />
+    <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="14.17.2" />
+    <PackageReference Include="Magick.NET.SystemDrawing" Version="8.0.28" />
+  </ItemGroup>
+</Project>
